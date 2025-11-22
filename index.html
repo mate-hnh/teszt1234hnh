@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hard News Hungary – Hardstyle & Hard Techno Magazin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Hard News Hungary – magyar hardstyle és hard techno magazin: hírek, interjúk, beszámolók és véleménycikkek a színtérről."
+  />
+
+  <!-- Google Font (opcionális, de jól néz ki) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #0b0b12;
+      --card: #151521;
+      --border: #2a2a3b;
+      --accent: #f53855;
+      --accent-soft: rgba(245, 56, 85, 0.18);
+      --text: #f4f4f7;
+      --muted: #9b9bb3;
+      --muted-soft: #6b6b85;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.5);
+      --transition-fast: 0.18s ease-out;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #10101b 0, #050509 45%);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER & NAV */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 9, 0.96),
+        rgba(5, 5, 9, 0.85),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0 0.9rem;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ff7b7b, #f53855);
+      box-shadow: 0 0 18px rgba(245, 56, 85, 0.8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .logo span {
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.3rem;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f53855, #ffb347);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 0.55rem 1.25rem;
+      font-size: 0.86rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast), background var(--transition-fast),
+        color var(--transition-fast), border-color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f53855, #ffb347);
+      color: #050509;
+      box-shadow: 0 12px 28px rgba(245, 56, 85, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(245, 56, 85, 0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-ghost:hover {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(10, 10, 18, 0.95);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text);
+      position: relative;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text);
+      transition: transform var(--transition-fast),
+        opacity var(--transition-fast), top var(--transition-fast);
+    }
+
+    .menu-toggle span::before {
+      top: -5px;
+    }
+
+    .menu-toggle span::after {
+      top: 5px;
+    }
+
+    .menu-toggle.open span {
+      background: transparent;
+    }
+
+    .menu-toggle.open span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.open span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 2.4rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.15rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(245, 56, 85, 0.08);
+      color: var(--muted);
+      font-size: 0.75rem;
+      border: 1px solid rgba(245, 56, 85, 0.4);
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffb347, #f53855);
+      box-shadow: 0 0 10px rgba(245, 56, 85, 0.9);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      line-height: 1.07;
+      margin: 0 0 0.8rem;
+    }
+
+    .hero h1 span.highlight {
+      background: linear-gradient(90deg, #ffb347, #f53855);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 0 0 1.6rem;
+      color: var(--muted);
+      max-width: 34rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+    }
+
+    .hero-meta span strong {
+      color: var(--text);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1d1d2a, #101018);
+      border-radius: var(--radius-xl);
+      padding: 1.3rem 1.3rem 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at -5% 0,
+        rgba(245, 56, 85, 0.35),
+        transparent 50%
+      );
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-tagline {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted-soft);
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card-title span {
+      color: #ffb347;
+    }
+
+    .hero-card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      margin-top: 0.7rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 0.7rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #ffd6de;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffb347, #f53855);
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: -30px;
+      background: radial-gradient(
+        circle at 100% 0,
+        rgba(245, 56, 85, 0.45),
+        transparent 60%
+      );
+      opacity: 0.5;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(
+        circle at top,
+        rgba(50, 50, 85, 0.25),
+        rgba(5, 5, 9, 0.95)
+      );
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* GRID & CARDS */
+
+    .grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      position: relative;
+      background: linear-gradient(
+        145deg,
+        rgba(15, 15, 26, 0.96),
+        rgba(10, 10, 19, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 1rem;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast), border-color var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(
+        circle at top left,
+        rgba(245, 56, 85, 0.18),
+        transparent 55%
+      );
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(245, 56, 85, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      gap: 0.6rem;
+    }
+
+    .card-category {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted-soft);
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.3;
+    }
+
+    .card-excerpt {
+      margin: 0.4rem 0 0.8rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      color: var(--muted-soft);
+      margin-top: 0.2rem;
+    }
+
+    .card-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .btn-card {
+      padding: 0.35rem 0.9rem;
+      font-size: 0.78rem;
+    }
+
+    /* ARTICLES LIST */
+
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .post-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 0.4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .post-row-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .post-row-title {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .post-row-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      color: var(--muted-soft);
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.08rem 0.55rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+    }
+
+    /* TAGS / CATEGORIES */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-size: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      cursor: default;
+    }
+
+    .tag strong {
+      color: var(--text);
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter {
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.25rem;
+      background: radial-gradient(circle at top left, #1f1723, #101019);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .newsletter h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .newsletter p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+
+    .input {
+      background: rgba(7, 7, 12, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text);
+      padding: 0.5rem 0.9rem;
+      font-size: 0.85rem;
+      min-width: 0;
+      flex: 1 1 180px;
+      outline: none;
+      transition: border-color var(--transition-fast),
+        box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    .input::placeholder {
+      color: var(--muted-soft);
+    }
+
+    .input:focus {
+      border-color: rgba(245, 56, 85, 0.5);
+      box-shadow: 0 0 0 1px rgba(245, 56, 85, 0.4);
+      background: rgba(7, 7, 12, 1);
+    }
+
+    .newsletter-confirm {
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+    }
+
+    .newsletter-message {
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #88ffb1;
+    }
+
+    /* ABOUT / RÓLUNK */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-text p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .about-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .about-list li::before {
+      content: "◆";
+      font-size: 0.6rem;
+      margin-top: 0.2rem;
+      color: #ffb347;
+    }
+
+    .about-highlight {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      background: linear-gradient(
+        135deg,
+        rgba(245, 56, 85, 0.08),
+        rgba(255, 179, 71, 0.05)
+      );
+      border: 1px solid rgba(245, 56, 85, 0.35);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .about-highlight strong {
+      color: var(--text);
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.1rem 1rem;
+      background: radial-gradient(circle at top, #171726, #101018);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    }
+
+    .contact-text p {
+      margin: 0 0 0.5rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .contact-meta {
+      font-size: 0.8rem;
+      color: var(--muted-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: 0.2rem;
+    }
+
+    .contact-meta a {
+      color: #ffb347;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+    }
+
+    .input-textarea {
+      border-radius: 14px;
+      resize: vertical;
+      min-height: 90px;
+      max-height: 200px;
+    }
+
+    .contact-message {
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+      color: #88ffb1;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.15rem 0 1.4rem;
+      font-size: 0.8rem;
+      color: var(--muted-soft);
+      background: rgba(5, 5, 9, 0.97);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffb347, #f53855);
+      box-shadow: 0 0 8px rgba(245, 56, 85, 0.8);
+    }
+
+    /* SCROLL TO TOP */
+
+    .scroll-top {
+      position: fixed;
+      bottom: 1.4rem;
+      right: 1.4rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: radial-gradient(circle at top, #232332, #151523);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--text);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity var(--transition-fast),
+        transform var(--transition-fast), box-shadow var(--transition-fast);
+      z-index: 15;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-mobile {
+        position: fixed;
+        inset: 3.2rem 0 auto;
+        padding: 0.7rem 1.25rem 0.9rem;
+        background: rgba(5, 5, 9, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: none;
+        flex-direction: column;
+        gap: 0.8rem;
+        z-index: 19;
+      }
+
+      .nav-mobile.open {
+        display: flex;
+      }
+
+      .nav-mobile a {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .nav-mobile a:hover {
+        color: var(--text);
+      }
+
+      .nav-mobile .btn {
+        width: fit-content;
+      }
+
+      .hero {
+        padding-top: 1.4rem;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      section {
+        padding: 2.1rem 0;
+      }
+
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+
+      .newsletter {
+        padding: 1rem 0.9rem;
+      }
+
+      .contact-card {
+        padding: 1rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#home" class="logo">
+          <span class="logo-mark">H</span>
+          <span>HARD NEWS<br />HUNGARY</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#cikkek">Cikkek</a>
+          <a href="#kategoriak">Kategóriák</a>
+          <a href="#rolunk">Rólunk</a>
+          <a href="#kapcsolat">Kapcsolat</a>
+        </div>
+
+        <div class="nav-cta">
+          <a
+            href="https://www.tiktok.com/@hardnewshungary"
+            target="_blank"
+            rel="noreferrer"
+            class="btn btn-ghost"
+            >TikTok</a
+          >
+          <a href="#hirlevel" class="btn btn-primary">Hírlevél</a>
+        </div>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menü">
+          <span></span>
+        </button>
+      </nav>
+
+      <!-- Mobil navigáció -->
+      <div id="nav-mobile" class="nav-mobile">
+        <a href="#cikkek">Cikkek</a>
+        <a href="#kategoriak">Kategóriák</a>
+        <a href="#rolunk">Rólunk</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+        <a
+          href="https://www.tiktok.com/@hardnewshungary"
+          target="_blank"
+          rel="noreferrer"
+          >TikTok profil</a
+        >
+        <a href="#hirlevel" class="btn btn-primary">Feliratkozás</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Független hardstyle & hard techno magazin
+            </div>
+            <h1>
+              <span class="highlight">Hard News Hungary</span><br />
+              cikkek, hírek, közösség – egy helyen.
+            </h1>
+            <p>
+              Helyi és nemzetközi hardstyle, raw, uptempo és hard techno
+              történések, őszinte vélemények, eseményajánlók és háttérsztorik –
+              egy blog, ami a színteret szolgálja, nem csak a hype-ot.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#cikkek" class="btn btn-primary">
+                Friss cikkek
+              </a>
+              <a
+                href="https://www.tiktok.com/@hardnewshungary"
+                target="_blank"
+                rel="noreferrer"
+                class="btn btn-ghost"
+              >
+                Kövess TikTokon
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <span><strong>HU fókusz</strong> – magyar szemszög</span>
+              <span
+                ><strong>Hardstyle & hard techno</strong> – semmi félmegoldás
+              </span>
+              <span><strong>Közösség</strong> – nem csak rajongók, alkotók is</span>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-card">
+              <div class="hero-tagline">Kiemelt anyag</div>
+              <h2 class="hero-card-title">
+                Hogyan marad életben a <span>hardstyle</span> válságok idején?
+              </h2>
+              <p class="card-excerpt" style="margin-top: 0;">
+                Elemzés a magyar és a holland szcéna tanulságairól, Defqon.1-től
+                a hazai klubestekig – mit tanulhat egy feltörekvő brand?
+              </p>
+              <div class="hero-card-meta">
+                <span>Longread • Véleménycikk</span>
+                <span>~12 perc olvasás</span>
+              </div>
+              <div style="margin-top: 0.85rem; display: flex; gap: 0.45rem;">
+                <div class="badge">
+                  <span class="badge-dot"></span>
+                  Insight
+                </div>
+                <div class="badge" style="background: rgba(94, 234, 212, 0.16); color:#e0fff9;">
+                  <span class="badge-dot"></span>
+                  Brandépítés
+                </div>
+              </div>
+            </div>
+            <div class="hero-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kiemelt cikkek -->
+    <section id="cikkek">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Kiemelt cikkek</h2>
+            <p class="section-subtitle">
+              Ezek azok az anyagok, amikre nyugodtan hivatkozhatsz vitákban.
+            </p>
+          </div>
+          <a href="#kategoriak" class="btn btn-ghost">Összes kategória</a>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-header">
+              <span class="card-category">Hardstyle • Elemzés</span>
+              <span class="pill">Brandépítés</span>
+            </div>
+            <h3 class="card-title">
+              Mit csinál jól egy sikeres fesztiválbrand – és hogyan fordítsd le
+              klubszintre?
+            </h3>
+            <p class="card-excerpt">
+              Defqon.1, Qlimax, Decibel – mi a közös bennük, és mit vehet át
+              ebből egy magyar szervező, aki “csak” egy 500–2000 fős eseményt
+              csinál?
+            </p>
+            <div class="card-meta">
+              <span>~8 perc • Véleménycikk</span>
+              <a href="#" class="btn btn-primary btn-card">Elolvasom</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-header">
+              <span class="card-category">Hard techno • Interjú</span>
+              <span class="pill">Magyar szcéna</span>
+            </div>
+            <h3 class="card-title">
+              “Nem elég jó zenét írni” – interjú egy hazai szervező / label
+              ownerrel
+            </h3>
+            <p class="card-excerpt">
+              Arról, hogyan lehet túlélni hullámvölgyeket, miért fontos a
+              közösség, és mit kezdj a social mediával, ha nem akarsz cringe
+              lenni.
+            </p>
+            <div class="card-meta">
+              <span>~6 perc • Interjú</span>
+              <a href="#" class="btn btn-primary btn-card">Elolvasom</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-header">
+              <span class="card-category">Színtér • Vélemény</span>
+              <span class="pill">Közösség</span>
+            </div>
+            <h3 class="card-title">
+              TikTok, Reels, vagy semmi? – hogyan kommunikáljon egy niche zenei
+              brand 2025-ben
+            </h3>
+            <p class="card-excerpt">
+              Melyik platform mire jó, mit ne csinálj semmiképp, és hogyan
+              maradj hiteles akkor is, ha automatizált tartalmakat használsz.
+            </p>
+            <div class="card-meta">
+              <span>~7 perc • Vélemény</span>
+              <a href="#" class="btn btn-primary btn-card">Elolvasom</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legújabb cikkek + Hírlevél -->
+    <section>
+      <div class="container">
+        <div class="grid grid-2">
+          <!-- Legújabb cikkek -->
+          <div>
+            <div class="section-header" style="margin-bottom: 0.8rem;">
+              <div>
+                <h2 class="section-title">Legújabb cikkek</h2>
+                <p class="section-subtitle">
+                  Ez már az új, önálló Hard News Hungary oldal tartalma lesz.
+                </p>
+              </div>
+            </div>
+
+            <div class="post-list">
+              <article class="post-row">
+                <div class="post-row-main">
+                  <h3 class="post-row-title">
+                    5 hiba, amit minden kezdő szervező elkövet – és hogyan
+                    úszd meg olcsóbban
+                  </h3>
+                  <div class="post-row-meta">
+                    <span>Hardstyle / Hard techno</span>
+                    <span>•</span>
+                    <span>2025. január 10.</span>
+                    <span class="pill">Szervezés</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-ghost btn-card">Olvasás</a>
+              </article>
+
+              <article class="post-row">
+                <div class="post-row-main">
+                  <h3 class="post-row-title">
+                    Közösségépítés a színtéren: mit csinálj a bulin túl?
+                  </h3>
+                  <div class="post-row-meta">
+                    <span>Színtér</span>
+                    <span>•</span>
+                    <span>2025. január 5.</span>
+                    <span class="pill">Közösség</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-ghost btn-card">Olvasás</a>
+              </article>
+
+              <article class="post-row">
+                <div class="post-row-main">
+                  <h3 class="post-row-title">
+                    Social media flow egy fesztivál előtt, alatt és után
+                  </h3>
+                  <div class="post-row-meta">
+                    <span>Marketing</span>
+                    <span>•</span>
+                    <span>2024. december 20.</span>
+                    <span class="pill">Checklist</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-ghost btn-card">Olvasás</a>
+              </article>
+            </div>
+          </div>
+
+          <!-- Hírlevél -->
+          <aside id="hirlevel">
+            <div class="newsletter">
+              <h3>Iratkozz fel a Hard News Hungary hírlevélre</h3>
+              <p>
+                Ha nem akarsz lemaradni az új cikkekről, interjúkról és a
+                kulisszák mögötti sztorikról, iratkozz fel. Spam helyett
+                hasznos infók, maximum heti 1x.
+              </p>
+              <form id="newsletter-form" class="newsletter-form">
+                <input
+                  type="email"
+                  name="email"
+                  class="input"
+                  placeholder="emailcimed@example.com"
+                  required
+                />
+                <button type="submit" class="btn btn-primary">
+                  Feliratkozás
+                </button>
+              </form>
+              <div class="newsletter-confirm">
+                A feliratkozással elfogadod, hogy időnként e-mailt küldünk
+                tartalomajánlóval és eseményekkel kapcsolatban.
+              </div>
+              <div id="newsletter-message" class="newsletter-message"></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategóriák -->
+    <section id="kategoriak">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Kategóriák</h2>
+            <p class="section-subtitle">
+              A Hard News Hungary alap struktúrája – blog, amit később simán
+              bővíthetsz.
+            </p>
+          </div>
+        </div>
+
+        <div class="tags">
+          <div class="tag"><strong>Hardstyle</strong> – hírek, elemzések</div>
+          <div class="tag"><strong>Raw / Uptempo</strong> – trendek, viták</div>
+          <div class="tag"><strong>Hard techno</strong> – interjúk, bulibeszámolók</div>
+          <div class="tag"><strong>Magyar szcéna</strong> – helyi szereplők</div>
+          <div class="tag"><strong>Nemzetközi</strong> – fesztiválok, brandek</div>
+          <div class="tag"><strong>Brandépítés</strong> – marketing, social</div>
+          <div class="tag"><strong>Közösség</strong> – vélemény, esszék</div>
+          <div class="tag"><strong>Playlist & zeneajánló</strong> – friss trackek</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rólunk -->
+    <section id="rolunk">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Rólunk</h2>
+            <p class="section-subtitle">
+              Mi az a Hard News Hungary és miért létezik ez az egész?
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              A Hard News Hungary egy független, magyar nyelvű blog, ami a
+              hardstyle, hard techno és a kapcsolódó szubzsánerek köré épül.
+              Nem híroldal akar lenni “még egy a sok közül”, hanem egy olyan
+              felület, ahol:
+            </p>
+            <ul class="about-list">
+              <li>
+                a hazai és nemzetközi színtér történései érthetően, őszintén,
+                véleménnyel jelennek meg;
+              </li>
+              <li>
+                egyszerre kap teret a rajongói nézőpont és a “szakmázós”
+                szervezői / marketinges szemlélet;
+              </li>
+              <li>
+                hosszabb, elgondolkodtató anyagok is megférnek a rövidebb
+                quick-take-ek mellett.
+              </li>
+            </ul>
+            <p>
+              A blog célja, hogy egy olyan hivatkozási pont legyen, amit
+              bátran belinkelsz vitákhoz, csoportokba, barátoknak – és ami
+              segít abban, hogy a színtér ne csak túléljen, hanem fejlődjön is.
+            </p>
+          </div>
+
+          <div class="about-highlight">
+            <strong>Mit találsz itt hosszú távon?</strong><br /><br />
+            • mélyebb elemzéseket fesztiválokról, klubokról, brandekről;<br />
+            • interjúkat szervezőkkel, DJ-kkel, vizuálosokkal, háttérben
+            dolgozó emberekkel;<br />
+            • social media & brandépítés fókuszú cikkeket, gyakorlati példákkal;<br />
+            • saját kommentárt a hullámvölgyekről, trendekről, vitás témákról.
+            <br /><br />
+            Ha ebben a közegben mozogsz – akár szervezőként, akár fellépőként,
+            akár csak fanboy/fangirl módban – ez az oldal neked szól.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kapcsolat -->
+    <section id="kapcsolat">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Kapcsolat, együttműködés, PR</h2>
+            <p class="section-subtitle">
+              Ha szeretnél cikket, interjút, megjelenést vagy egyszerűen csak
+              beszélgetnél a szcénáról.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-text">
+            <p>
+              Írhatsz akkor is, ha:
+            </p>
+            <ul class="about-list">
+              <li>új eseményt, sorozatot vagy fesztivált indítasz;</li>
+              <li>
+                szeretnél interjút, anyagot egy upcoming vagy már ismert
+                projektről;
+              </li>
+              <li>
+                kampány- vagy brandépítésben gondolkodsz a hardstyle / hard
+                techno szcénában;
+              </li>
+              <li>
+                csak szeretnél tippeket, hogy merre érdemes elindulni
+                kommunikációban.
+              </li>
+            </ul>
+
+            <div class="contact-meta">
+              <span
+                >Email (példa): <a href="mailto:info@hardnewshungary.hu"
+                  >info@hardnewshungary.hu</a
+                ></span
+              >
+              <span
+                >TikTok: <a
+                  href="https://www.tiktok.com/@hardnewshungary"
+                  target="_blank"
+                  rel="noreferrer"
+                  >@hardnewshungary</a
+                ></span
+              >
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <label>
+              Név
+              <input
+                type="text"
+                name="name"
+                class="input"
+                placeholder="Név vagy artist / brand név"
+                required
+              />
+            </label>
+            <label>
+              E-mail cím
+              <input
+                type="email"
+                name="email"
+                class="input"
+                placeholder="emailcimed@example.com"
+                required
+              />
+            </label>
+            <label>
+              Üzenet
+              <textarea
+                name="message"
+                class="input input-textarea"
+                placeholder="Röviden írd le, miben gondolkodsz (interjú, cikk, együttműködés, stb.)"
+                required
+              ></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">
+              Üzenet küldése (demó)
+            </button>
+            <div id="contact-message" class="contact-message"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Ugrás az oldal tetejére">
+    ↑
+  </button>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-dot"></span>
+          <span>Hard News Hungary – független blog a hardstyle & hard techno szcénáról.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#rolunk">Rólunk</a>
+          <a href="#kapcsolat">Kapcsolat</a>
+          <a
+            href="https://www.tiktok.com/@hardnewshungary"
+            target="_blank"
+            rel="noreferrer"
+            >TikTok</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobil menü
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMobile = document.getElementById("nav-mobile");
+
+    if (menuToggle && navMobile) {
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("open");
+        navMobile.classList.toggle("open");
+      });
+
+      navMobile.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("open");
+          navMobile.classList.remove("open");
+        });
+      });
+    }
+
+    // Scroll to top gomb
+    const scrollTopBtn = document.getElementById("scroll-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Hírlevél form – egyelőre csak demó
+    const newsletterForm = document.getElementById("newsletter-form");
+    const newsletterMessage = document.getElementById("newsletter-message");
+
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = newsletterForm.email.value.trim();
+
+        if (!email) return;
+
+        newsletterMessage.textContent =
+          "Köszi a feliratkozást! A valódi hírlevél rendszert később kötjük majd össze az oldallal.";
+        newsletterForm.reset();
+      });
+    }
+
+    // Kapcsolat form – szintén csak demó
+    const contactForm = document.getElementById("contact-form");
+    const contactMessage = document.getElementById("contact-message");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        contactMessage.textContent =
+          "Az üzenetküldés itt még demó. Később backendhez vagy e-mail szolgáltatóhoz köthető.";
+        contactForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
