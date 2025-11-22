@@ -25,7 +25,7 @@ body {
   padding: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #10101b 0, #050509 45%);
+  background: #000;
   color: var(--text);
   scroll-behavior: smooth;
 }
@@ -150,7 +150,7 @@ header {
 .btn {
   border: none;
   cursor: pointer;
-  border-radius: 999px;
+  border-radius: 10px;
   padding: 0.55rem 1.25rem;
   font-size: 0.86rem;
   font-weight: 500;
