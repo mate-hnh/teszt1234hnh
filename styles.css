@@ -1,6 +1,6 @@
 :root {
-  --bg: #050509;
-  --bg-alt: #0b0b12;
+  --bg: #000;
+  --bg-alt: #000;
   --card: #151521;
   --border: #2a2a3b;
   --accent: #f53855;
@@ -66,8 +66,8 @@ header {
   backdrop-filter: blur(16px);
   background: linear-gradient(
     to bottom,
-    rgba(5, 5, 9, 0.96),
-    rgba(5, 5, 9, 0.85),
+    rgba(0, 0, 0, 0.96),
+    rgba(0, 0, 0, 0.85),
     transparent
   );
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
