@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hard News Hungary – Cikkek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kiemelt és legújabb cikkek a Hard News Hungary oldalán." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">H</span>
+        <span>Hard News Hungary</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Főoldal</a>
+        <a href="cikkek.html">Cikkek</a>
+        <a href="kategoriak.html">Kategóriák</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="kategoriak.html">Kategóriák</a>
+        <a class="btn btn-primary" href="hirlevel.html">Hírlevél</a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Menü">
+        <span></span>
+      </button>
+    </div>
+    <div id="nav-mobile" class="nav-mobile">
+      <a href="index.html">Főoldal</a>
+      <a href="cikkek.html">Cikkek</a>
+      <a href="kategoriak.html">Kategóriák</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+      <a href="hirlevel.html">Hírlevél</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 1.6rem;">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Kiemelt és friss cikkek
+        </div>
+        <h1 style="margin-bottom: 0.4rem;">Merülj el a Hard News Hungary anyagaiban</h1>
+        <p class="page-intro">
+          Elemzések fesztiválokról és brandekről, interjúk a magyar és nemzetközi
+          szereplőkkel, valamint gyakorlati tippek szervezőknek és alkotóknak.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Kiemelt cikkek</h2>
+            <p class="section-subtitle">
+              Ezek azok az anyagok, amikre nyugodtan hivatkozhatsz vitákban.
+            </p>
+          </div>
+          <a href="kategoriak.html" class="btn btn-ghost">Összes kategória</a>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-header">
+              <span class="card-category">Hardstyle • Elemzés</span>
+              <span class="pill">Brandépítés</span>
+            </div>
+            <h3 class="card-title">
+              Mit csinál jól egy sikeres fesztiválbrand – és hogyan fordítsd le
+              klubszintre?
+            </h3>
+            <p class="card-excerpt">
+              Defqon.1, Qlimax, Decibel – mi a közös bennük, és mit vehet át
+              ebből egy magyar szervező, aki “csak” egy 500–2000 fős eseményt
+              csinál?
+            </p>
+            <div class="card-meta">
+              <span>~8 perc • Véleménycikk</span>
+              <a href="cikk-reszletek.html#cikk-1" class="btn btn-primary btn-card">Elolvasom</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <span class="card-category">Hard techno • Interjú</span>
+              <span class="pill">Magyar szcéna</span>
+            </div>
+            <h3 class="card-title">
+              “Nem elég jó zenét írni” – interjú egy hazai szervező / label
+              ownerrel
+            </h3>
+            <p class="card-excerpt">
+              Arról, hogyan lehet túlélni hullámvölgyeket, miért fontos a
+              közösség, és mit kezdj a social mediával, ha nem akarsz cringe
+              lenni.
+            </p>
+            <div class="card-meta">
+              <span>~6 perc • Interjú</span>
+              <a href="cikk-reszletek.html#cikk-2" class="btn btn-primary btn-card">Elolvasom</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <span class="card-category">Színtér • Vélemény</span>
+              <span class="pill">Közösség</span>
+            </div>
+            <h3 class="card-title">
+              TikTok, Reels, vagy semmi? – hogyan kommunikáljon egy niche zenei
+              brand 2025-ben
+            </h3>
+            <p class="card-excerpt">
+              Melyik platform mire jó, mit ne csinálj semmiképp, és hogyan
+              maradj hiteles akkor is, ha automatizált tartalmakat használsz.
+            </p>
+            <div class="card-meta">
+              <span>~7 perc • Vélemény</span>
+              <a href="cikk-reszletek.html#cikk-3" class="btn btn-primary btn-card">Elolvasom</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid grid-2">
+          <div>
+            <div class="section-header" style="margin-bottom: 0.8rem;">
+              <div>
+                <h2 class="section-title">Legújabb cikkek</h2>
+                <p class="section-subtitle">
+                  Ez már az új, önálló Hard News Hungary oldal tartalma lesz.
+                </p>
+              </div>
+            </div>
+
+            <div class="post-list">
+              <article class="post-row">
+                <div class="post-row-main">
+                  <h3 class="post-row-title">
+                    5 hiba, amit minden kezdő szervező elkövet – és hogyan
+                    úszd meg olcsóbban
+                  </h3>
+                  <div class="post-row-meta">
+                    <span>Hardstyle / Hard techno</span>
+                    <span>•</span>
+                    <span>2025. január 10.</span>
+                    <span class="pill">Szervezés</span>
+                  </div>
+                </div>
+                <a href="cikk-reszletek.html#cikk-4" class="btn btn-ghost btn-card">Olvasás</a>
+              </article>
+
+              <article class="post-row">
+                <div class="post-row-main">
+                  <h3 class="post-row-title">
+                    Közösségépítés a színtéren: mit csinálj a bulin túl?
+                  </h3>
+                  <div class="post-row-meta">
+                    <span>Színtér</span>
+                    <span>•</span>
+                    <span>2025. január 5.</span>
+                    <span class="pill">Közösség</span>
+                  </div>
+                </div>
+                <a href="cikk-reszletek.html#cikk-5" class="btn btn-ghost btn-card">Olvasás</a>
+              </article>
+
+              <article class="post-row">
+                <div class="post-row-main">
+                  <h3 class="post-row-title">
+                    Social media flow egy fesztivál előtt, alatt és után
+                  </h3>
+                  <div class="post-row-meta">
+                    <span>Marketing</span>
+                    <span>•</span>
+                    <span>2024. december 20.</span>
+                    <span class="pill">Checklist</span>
+                  </div>
+                </div>
+                <a href="cikk-reszletek.html#cikk-6" class="btn btn-ghost btn-card">Olvasás</a>
+              </article>
+            </div>
+          </div>
+
+          <aside id="hirlevel">
+            <div class="newsletter">
+              <h3>Iratkozz fel a Hard News Hungary hírlevélre</h3>
+              <p>
+                Ha nem akarsz lemaradni az új cikkekről, interjúkról és a
+                kulisszák mögötti sztorikról, iratkozz fel. Spam helyett
+                hasznos infók, maximum heti 1x.
+              </p>
+              <form id="newsletter-form" class="newsletter-form">
+                <input
+                  type="email"
+                  name="email"
+                  class="input"
+                  placeholder="emailcimed@example.com"
+                  required
+                />
+                <button type="submit" class="btn btn-primary">
+                  Feliratkozás
+                </button>
+              </form>
+              <div class="newsletter-confirm">
+                A feliratkozással elfogadod, hogy időnként e-mailt küldünk
+                tartalomajánlóval és eseményekkel kapcsolatban.
+              </div>
+              <div id="newsletter-message" class="newsletter-message"></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Ugrás az oldal tetejére">
+    ↑
+  </button>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-dot"></span>
+          <span>Hard News Hungary – független blog a hardstyle & hard techno szcénáról.</span>
+        </div>
+        <div class="footer-links">
+          <a href="rolunk.html">Rólunk</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
+          <a href="hirlevel.html">Hírlevél</a>
+          <a
+            href="https://www.tiktok.com/@hardnewshungary"
+            target="_blank"
+            rel="noreferrer"
+            >TikTok</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
