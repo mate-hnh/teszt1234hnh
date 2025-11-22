@@ -150,7 +150,7 @@ header {
 .btn {
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 0; /* Módosítva: teljesen szögletes gombok */
   padding: 0.55rem 1.25rem;
   font-size: 0.86rem;
   font-weight: 500;
@@ -416,11 +416,8 @@ section {
 }
 
 section:nth-of-type(even) {
-  background: radial-gradient(
-    circle at top,
-    rgba(50, 50, 85, 0.25),
-    rgba(5, 5, 9, 0.95)
-  );
+  /* Módosítva: kivettem az átmenetes hátteret, hogy mindenhol fekete legyen */
+  background: transparent;
 }
 
 .section-header {
