@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hard News Hungary – Hírlevél</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Iratkozz fel a Hard News Hungary hírlevelére." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">H</span>
+        <span>Hard News Hungary</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Főoldal</a>
+        <a href="cikkek.html">Cikkek</a>
+        <a href="kategoriak.html">Kategóriák</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="cikkek.html">Cikkek</a>
+        <a class="btn btn-primary" href="hirlevel.html">Hírlevél</a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Menü">
+        <span></span>
+      </button>
+    </div>
+    <div id="nav-mobile" class="nav-mobile">
+      <a href="index.html">Főoldal</a>
+      <a href="cikkek.html">Cikkek</a>
+      <a href="kategoriak.html">Kategóriák</a>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+      <a href="hirlevel.html">Hírlevél</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 1.4rem;">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Hard News Hungary hírlevél
+        </div>
+        <h1 style="margin-bottom: 0.5rem;">Maradj képben a legfontosabb hardstyle & hard techno tartalmakkal</h1>
+        <p class="page-intro">
+          Maximum heti 1 e-mail, spam nélkül. A legjobb cikkek, interjúk és kulisszák mögötti jegyzetek egyben, kiegészítve rövid szakmai tippekkel szervezőknek és alkotóknak.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="newsletter">
+          <h3>Iratkozz fel a Hard News Hungary hírlevélre</h3>
+          <p>
+            Ha nem akarsz lemaradni az új cikkekről, interjúkról és a kulisszák
+            mögötti sztorikról, iratkozz fel. Spam helyett hasznos infók,
+            maximum heti 1x.
+          </p>
+          <form id="newsletter-form" class="newsletter-form">
+            <input
+              type="email"
+              name="email"
+              class="input"
+              placeholder="emailcimed@example.com"
+              required
+            />
+            <button type="submit" class="btn btn-primary">
+              Feliratkozás
+            </button>
+          </form>
+          <div class="newsletter-confirm">
+            A feliratkozással elfogadod, hogy időnként e-mailt küldünk
+            tartalomajánlóval és eseményekkel kapcsolatban.
+          </div>
+          <div id="newsletter-message" class="newsletter-message"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Ugrás az oldal tetejére">
+    ↑
+  </button>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-dot"></span>
+          <span>Hard News Hungary – független blog a hardstyle & hard techno szcénáról.</span>
+        </div>
+        <div class="footer-links">
+          <a href="rolunk.html">Rólunk</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
+          <a href="hirlevel.html">Hírlevél</a>
+          <a
+            href="https://www.tiktok.com/@hardnewshungary"
+            target="_blank"
+            rel="noreferrer"
+            >TikTok</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
