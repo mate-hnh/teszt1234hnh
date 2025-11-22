@@ -198,6 +198,7 @@ header {
   cursor: pointer;
 }
 
+/* JAVÍTÁS: Alapértelmezetten elrejtjük a mobil menüt */
 .nav-mobile {
   display: none;
 }
@@ -929,7 +930,7 @@ footer {
     background: rgba(5, 5, 9, 0.96);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     padding: 0.75rem 1.25rem 1rem;
-    display: grid;
+    display: grid; /* Mobil nézetben megjelenik, ha nyitva van */
     gap: 0.65rem;
     transform: translateY(-8px);
     opacity: 0;
