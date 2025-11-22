@@ -198,6 +198,10 @@ header {
   cursor: pointer;
 }
 
+.nav-mobile {
+  display: none;
+}
+
 .menu-toggle span {
   display: block;
   width: 16px;
